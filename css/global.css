@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --baalu-black: #3e3e47;
+    --baalu-black-shade: #bfbfbf;
+    --field-outline-color: #1a1b1f;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Opens Sans', sans-serif;
+    font-variation-settings:
+    "wdth" 100;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+a {
+    color: unset;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 25px;
+    display: block;
+
+    & img {
+        height: 100%;
+    }
+}
+
+/* polyfill for old browser versions */
+.logo img {
+    height: 100%;
+}
+/* polyfill end */
+
+.py-5 {
+    padding-block: 1.5rem;
+}
+
+footer {
+    padding-inline: 7.5%;
+    padding-block: 3.5vh 10vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #eeeeeef2;
+    border-top: 1.5px solid var(--field-outline-color);
+    position: relative;
+
+    & .right {
+        gap: 5vw;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    & .quick-nav-section h3 {
+        font-size: 80%;
+        text-transform: uppercase;
+        line-height: 1.75em;
+    }
+
+    & .quick-nav-section a {
+        text-decoration: none;
+        color: #43464d;
+        text-transform: capitalize;
+        font-size: 0.875em;
+        display: block;
+        margin-bottom: 5px;
+        line-height: 1.75em;
+        opacity: 0.6;
+    }
+
+    & .quick-nav-section .quick-nav-link-email {
+        text-transform: lowercase;
+    }
+
+    & .quick-nav-section a:hover {
+        opacity: 1;
+    }
+
+    & .copyright-text {
+        position: absolute;
+        right: 7.5%;
+        bottom: 3.5vh;
+        color: var(--field-outline-color);
+    }
+}
+
+
+/* polyfill for old browser versions */
+footer .right {
+    gap: 5vw;
+    display: flex;
+    align-items: flex-start;
+}
+
+footer .quick-nav-section h3 {
+    font-size: 80%;
+    text-transform: uppercase;
+    line-height: 1.75em;
+}
+
+footer .quick-nav-section a {
+    text-decoration: none;
+    color: #43464d;
+    text-transform: capitalize;
+    font-size: 0.875em;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1.75em;
+    opacity: 0.6;
+}
+
+footer .quick-nav-section .quick-nav-link-email {
+    text-transform: lowercase;
+}
+
+footer .quick-nav-section a:hover {
+    opacity: 1;
+}
+
+footer .copyright-text {
+    position: absolute;
+    right: 7.5%;
+    bottom: 3.5vh;
+    color: var(--field-outline-color);
+}
+/* polyfill end */

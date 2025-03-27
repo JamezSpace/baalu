@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "@vercel/node": "^5.1.14"
+    },
+    "name": "baalu-frontend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "dev": "vercel dev",
+        "deploy": "vercel deploy"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
