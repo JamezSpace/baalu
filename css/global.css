@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
     --baalu-black: #3e3e47;
@@ -6,7 +7,9 @@
     --field-outline-color: #1a1b1f;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,15 +17,49 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Opens Sans', sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
     font-variation-settings:
-    "wdth" 100;
+        "wdth" 100;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
+body.lock-scrollbar {
+    overflow-y: hidden;
+}
+
 a {
     color: unset;
+}
+
+input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+
+/* GENERAL CLASS STYLINGS */
+.font-mt {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.heading-font-weight {
+    font-weight: 500;
 }
 
 .flex {
@@ -43,16 +80,278 @@ a {
 .logo img {
     height: 100%;
 }
+
 /* polyfill end */
+
 
 .py-5 {
     padding-block: 1.5rem;
 }
 
+.px-5 {
+    padding-inline: 1.5rem;
+}
+
+.btn {
+    padding: 15px 15px;
+    background-color: var(--baalu-black);
+    color: #fff;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn.secondary {
+    background-color: #fff;
+    color: var(--baalu-black);
+    padding: 12px 25px;
+    font-size: 0.8em;
+}
+
+.page-descriptor-container {
+    height: 40svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    & h1 {
+        margin-block: 20px;
+        font-size: calc(1em * 1.618 * 2);
+    }
+
+    & p {
+        opacity: 0.9;
+    }
+}
+
+/* polyfill for old browser versions */
+.page-descriptor-container h1 {
+    margin-block: 20px;
+    font-size: calc(1em * 1.618 * 2);
+}
+
+.page-descriptor-container p {
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* polyfill end */
+
+
+.picture-bg {
+    background-image: linear-gradient(#00000080, #00000080), url('../img/baalu-bg.png');
+    background-position: 0 0, 0 0;
+    background-size: auto, cover;
+}
+
+.picture-2-bg {
+    background-image: linear-gradient(#efefef80, #efefef80), url('../img/baalu-bg.png');
+    background-position: 0 0, 0 0;
+    background-size: auto, cover;
+}
+
+header {
+    padding: 20px;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    &>button {
+        display: none;
+    }
+}
+
+nav a {
+    padding: 9px 20px;
+    font-size: 0.875em;
+}
+
+nav a.active-page {
+    opacity: 0.9 !important;
+}
+
+.nav-bar a:not(:last-of-type) {
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    line-height: 20px;
+    transition: opacity 300ms;
+}
+
+.nav-bar a:not(:last-of-type):hover {
+    opacity: 0.9;
+}
+
+.nav-bar a:last-of-type {
+    transition: background-color 300ms, color 300ms;
+}
+
+.nav-bar a:last-of-type:hover {
+    background-color: transparent;
+    border: 1px solid var(--baalu-black);
+    color: var(--baalu-black);
+}
+
+
+.nav-bar-mobile {
+    display: none;
+    transform: translateX(150%);
+    transition: transform 500ms;
+}
+
+.nav-bar-mobile .nav-bar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar-mobile.active {
+    display: block;
+    transform: translateX(0);
+    position: fixed;
+    z-index: 2;
+    top: 60px;
+    width: 100%;
+    height: 100svh;
+    backdrop-filter: blur(1px) brightness(0.5);
+}
+
+.nav-bar-mobile.active a {
+    margin-block: 20px;
+}
+
+/* polyfill for old browser versions */
+header nav a {
+    padding: 9px 20px;
+}
+
+header nav a.active-page {
+    opacity: 0.9 !important;
+}
+
+header .nav-bar a:not(:last-of-type) {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header>button {
+    display: none;
+}
+
+/* polyfill end */
+
+
+/* BAALU FORM */
+.baalu-form {
+    padding-inline: 30px;
+
+    & .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: calc(16px + 10px);
+    }
+
+    & .row .field {
+        width: 100%;
+    }
+
+    & .row .field label {
+        display: block;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.75em;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 20px;
+    }
+
+    & .row .field :is(input:not([type="radio"]), textarea) {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid var(--field-outline-color);
+    }
+
+    & .field .radio-btn-group label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+
+    & .btn {
+        border: none;
+    }
+
+    & .btn:hover {
+        outline: 1.5px solid var(--baalu-black);
+        outline-offset: 2px;
+    }
+}
+
+/* polyfill for old browser versions */
+.baalu-form .row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: calc(16px + 10px);
+}
+
+.baalu-form .row .field {
+    width: 100%;
+}
+
+.baalu-form .row .field label {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 0.75em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+
+.baalu-form .row .field input:not([type="radio"]),
+.baalu-form .row .field textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--field-outline-color);
+}
+
+.baalu-form .field .radio-btn-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.baalu-form .btn {
+    border: none;
+}
+
+@supports(outline-offset: 2px) {
+    .baalu-form .btn:hover {
+        outline: 1.5px solid var(--baalu-black);
+        outline-offset: 2px;
+    }
+}
+
+@supports not (outline-offset: 2px) {
+    .baalu-form .btn:hover {
+        box-shadow: 0 0 0 3px var(--baalu-black), 0 0 0 4px var(--baalu-black);
+    }
+}
+
+/* polyfill end */
+
+
 footer {
     padding-inline: 7.5%;
     padding-block: 3.5vh 10vh;
-    display: flex;
     align-items: flex-start;
     justify-content: space-between;
     background-color: #eeeeeef2;
@@ -66,7 +365,9 @@ footer {
     }
 
     & .quick-nav-section h3 {
+        font-family: 'Montserrat', sans-serif;
         font-size: 80%;
+        margin-bottom: 12px;
         text-transform: uppercase;
         line-height: 1.75em;
     }
@@ -91,6 +392,7 @@ footer {
     }
 
     & .copyright-text {
+        font-size: 80%;
         position: absolute;
         right: 7.5%;
         bottom: 3.5vh;
@@ -101,13 +403,15 @@ footer {
 
 /* polyfill for old browser versions */
 footer .right {
-    gap: 5vw;
+    gap: 10vw;
     display: flex;
     align-items: flex-start;
 }
 
 footer .quick-nav-section h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 80%;
+    margin-bottom: 12px;
     text-transform: uppercase;
     line-height: 1.75em;
 }
@@ -132,9 +436,53 @@ footer .quick-nav-section a:hover {
 }
 
 footer .copyright-text {
+    font-size: 80%;
     position: absolute;
     right: 7.5%;
     bottom: 3.5vh;
     color: var(--field-outline-color);
 }
+
 /* polyfill end */
+
+@media screen and (max-width: 990px) {
+    .baalu-form .row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    header .nav-bar {
+        display: none;
+    }
+
+    header>button {
+        display: inline-flex;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    footer {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    footer {
+        gap: 40px;
+    }
+
+    footer .right {
+        flex-direction: column;
+        align-items: center;
+        gap: 3.5vh;
+    }
+
+    .quick-nav-section {
+        text-align: center;
+    }
+}

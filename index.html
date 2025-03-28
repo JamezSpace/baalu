@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
     <link rel="stylesheet" href="./css/index.css">
     <title>Baalu - </title>
 </head>
@@ -14,14 +17,31 @@
             <img src="./img/logo-final-white.png" alt="baalu's logo">
         </a>
         <nav class="nav-bar">
-            <a href="/services.html">services</a>
-            <a href="/about.html">about</a>
-            <a href="/contact.html">contact</a>
+            <a href="/services">services</a>
+            <a href="/about">about</a>
+            <a href="/contact">contact</a>
             <a href="#get-quote-container" class="btn">Request a Quote</a>
         </nav>
+        <button type="button" id="toggle-nav-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="none" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M12 6.826A.913.913 0 1 0 12 5a.913.913 0 0 0 0 1.826m6.088 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826m-12.176 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826M12 12.913a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826m6.088 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826m-12.176 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826M12 19a.913.913 0 1 0 0-1.826A.913.913 0 0 0 12 19m6.088 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826M5.912 19a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826" />
+            </svg>
+        </button>
     </header>
+
+    <section class="nav-bar-mobile">
+        <nav class="nav-bar">
+            <a href="/services">services</a>
+            <a href="/about">about</a>
+            <a href="/contact">contact</a>
+            <a href="/#get-quote-container" class="btn">Request a Quote</a>
+        </nav>
+    </section>
+
     <section class="heros" aria-label="this is the heros section">
-        <div class="wrapper">
+        <div class="wrapper font-mt heading-font-weight">
             <h1>Streamline Your US Shipping Operations</h1>
             <p>Baalu provides comprehensive third party logistics services to help you efficiently store, pick, pack,
                 and ship your products to customers across the United States.</p>
@@ -129,7 +149,7 @@
                 Fill out the form to receive a custom quote tailored to your specific logistic needs. Our team will
                 analyze your requirements and provide a comprehensive solution</p>
         </hgroup>
-        <form action="">
+        <form class="baalu-form">
             <div class="row">
                 <div class="field">
                     <label for="name">name</label>
@@ -178,7 +198,7 @@
             <button type="submit" class="btn">Send Request</button>
         </form>
     </section>
-    <footer>
+    <footer class="flex">
         <a href="/" class="logo left">
             <img src="./img/logo-final-white.png" alt="baalu's logo">
         </a>
@@ -202,6 +222,8 @@
         </div>
         <p class="copyright-text">&copy; 2025 Baalu. All Rights Reserved.</p>
     </footer>
+
+    <script src="./js/general.js"></script>
 </body>
 
 </html>

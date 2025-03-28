@@ -1,0 +1,58 @@
+@import url('./global.css');
+
+main p:first-of-type {
+    margin-bottom: 20px;
+}
+
+.core-values-section {
+    color: #fff;
+
+    article {
+        flex-direction: column;
+        justify-content: center;
+        color: #101010;
+    }
+
+    article h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+.core-values-section article {
+    flex-direction: column;
+    justify-content: center;
+    color: #101010;
+}
+
+.core-values-section article h2 {
+    margin-bottom: 1rem;
+}
+
+.values-container {
+    gap: 48px;
+}
+
+.quote-container {
+    margin-block: 7.5vh 10vh;
+    flex-direction: column;
+    text-align: center;
+
+    & p {
+        max-width: 70%;
+    }
+
+    & .quote {
+        margin-bottom: 10px;
+        font-weight: 300;
+        font-style: italic;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .values-container  {
+        padding-inline: 30px;
+        flex-direction: column-reverse;
+        gap: 20px;
+        margin-top: 10px;
+    }
+}

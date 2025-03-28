@@ -1,65 +1,5 @@
 @import url('./global.css');
 
-.btn {
-    padding: 15px 15px;
-    background-color: var(--baalu-black);
-    color: #fff;
-    display: inline-flex;
-    text-decoration: none;
-}
-
-.btn.secondary {
-    background-color: #fff;
-    color: var(--baalu-black);
-    padding: 12px 25px;
-    font-size: 0.8em;
-}
-
-header {
-    padding: 20px;
-    justify-content: space-between;
-
-    & nav a {
-        padding: 9px 20px;
-        font-size: 0.875em;
-    }
-
-    & .nav-bar a:not(:last-of-type) {
-        text-transform: uppercase;
-        text-decoration: none;
-        opacity: 0.6;
-        letter-spacing: 1px;
-        line-height: 20px;
-        transition: opacity 300ms;
-    }
-
-    & .nav-bar a:not(:last-of-type):hover {
-        opacity: 0.9;
-    }
-
-    & .nav-bar a:last-of-type {
-        transition: background-color 300ms, color 300ms;
-    }
-
-    & .nav-bar a:last-of-type:hover {
-        background-color: transparent;
-        border: 1px solid var(--baalu-black);
-        color: var(--baalu-black);
-    }
-}
-
-/* polyfill for old browser versions */
-header nav a {
-    padding: 9px 20px;
-}
-
-header .nav-bar a:not(:last-of-type) {
-    text-transform: uppercase;
-    text-decoration: none;
-}
-/* polyfill end */
-
-
 .heros {
     height: 90svh;
     color: #f4f4f4;
@@ -114,6 +54,7 @@ header .nav-bar a:not(:last-of-type) {
 
 .section-descriptor {
     max-width: fit-content;
+    font-family: 'Montserrat', sans-serif;
     font-size: calc(1em / 1.618 * 1.2);
     border-radius: 1rem;
     padding: 0.75em 2.25em;
@@ -155,6 +96,7 @@ header .nav-bar a:not(:last-of-type) {
 
 .services {
     gap: 20px;
+    align-items: flex-start;
 }
 
 .service {
@@ -272,7 +214,7 @@ header .nav-bar a:not(:last-of-type) {
     }
 }
 
-.get-quote-container form {
+.baalu-form {
     padding-inline: 30px;
 
     & .row {
@@ -289,6 +231,7 @@ header .nav-bar a:not(:last-of-type) {
         display: block;
         text-transform: uppercase;
         margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
         font-size: 0.75em;
         font-weight: 500;
         letter-spacing: 1px;
@@ -308,21 +251,28 @@ header .nav-bar a:not(:last-of-type) {
         margin-bottom: 5px;
     }
 
-    & .btn {}
+    & .btn {
+        border: none;
+    }
+
+    & .btn:hover {
+        outline: 1.5px solid var(--baalu-black);
+        outline-offset: 2px;
+    }
 }
 
 /* polyfill for old browser versions */
-.get-quote-container form .row {
+.baalu-form .row {
     display: flex;
     gap: 20px;
     margin-bottom: calc(16px + 10px);
 }
 
-.get-quote-container form .row .field {
+.baalu-form .row .field {
     width: 100%;
 }
 
-.get-quote-container form .row .field label {
+.baalu-form .row .field label {
     display: block;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -332,20 +282,55 @@ header .nav-bar a:not(:last-of-type) {
     line-height: 20px;
 }
 
-.get-quote-container form .row .field input:not([type="radio"]),
-.get-quote-container form .row .field textarea {
+.baalu-form .row .field input:not([type="radio"]),
+.baalu-form .row .field textarea {
     width: 100%;
     padding: 8px 12px;
     border: 1px solid var(--field-outline-color);
 }
 
-.get-quote-container form .field .radio-btn-group label {
+.baalu-form .field .radio-btn-group label {
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 5px;
 }
 
+.baalu-form .btn {
+    border: none;
+}
+
+@supports(outline-offset: 2px) {
+    .baalu-form .btn:hover {
+        outline: 1.5px solid var(--baalu-black);
+        outline-offset: 2px;
+    }
+}
+
+@supports not (outline-offset: 2px) {
+    .baalu-form .btn:hover {
+        box-shadow: 0 0 0 3px var(--baalu-black), 0 0 0 4px var(--baalu-black);
+    }
+}
+
 /* polyfill end */
 
 
+@media screen and (max-width: 768px) {
+    .services {
+        flex-direction: column;
+    }
+
+    .why-baalu-container img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .about-baalu-container section {
+        padding-left: 20px;
+    }
+    .about-baalu-container section img {
+        display: none;
+    }
+}

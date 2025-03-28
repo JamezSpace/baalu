@@ -1,17 +1,12 @@
 {
-    "dependencies": {
-        "@vercel/node": "^5.1.14"
-    },
-    "name": "baalu-frontend",
-    "version": "1.0.0",
-    "main": "index.js",
-    "devDependencies": {},
-    "scripts": {
-        "dev": "vercel dev",
-        "deploy": "vercel deploy"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": ""
+  "name": "baalu-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

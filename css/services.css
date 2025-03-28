@@ -1,2 +1,53 @@
 @import url('./global.css');
 
+.services-container {
+    list-style-type: none;
+    /* border-block: 1px solid var(--baalu-black); */
+
+    .service {
+        padding-inline: 2.5%;
+        padding-block: 20px;
+    }
+
+    .service h2 {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 2.375rem;
+        margin-block: 10px;
+    }
+
+    .service p:last-of-type {
+        margin-bottom: 14px;
+    }
+
+    .service-middle {
+        border-block: 1px solid var(--baalu-black);
+        padding-block: 20px;
+    }
+}
+
+/* polyfill for old browser versions */
+.service {
+    padding-inline: 2.5%;
+    padding-block: 20px;
+}
+
+.service h2 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2.375rem;
+    margin-block: 10px;
+}
+
+.service p:last-of-type {
+    margin-bottom: 14px;
+}
+
+.service-middle {
+    border-block: 1px solid var(--baalu-black);
+    padding-block: 20px;
+}
+/* polyfill end */
+
+main {
+    padding-inline: 30px;
+    margin-block: 30px;
+}
