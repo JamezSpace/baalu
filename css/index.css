@@ -147,6 +147,7 @@
     height: 60svh;
     gap: 20px;
     border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     & img {
         height: 100%;
@@ -157,9 +158,14 @@
 }
 
 .why-baalu-container .why-text-container {
+    padding-inline-start: 20px;
 
     & h2 {
         margin-block: 5px 1em;
+    }
+
+    & ul {
+        padding-inline-start: 20px;
     }
 
     & .why-answer {
@@ -181,6 +187,10 @@
 
 .why-baalu-container .why-text-container h2 {
     margin-block: 5px 1em;
+}
+
+.why-baalu-container .why-text-container ul {
+    padding-inline-start: 20px;
 }
 
 .why-baalu-container .why-text-container .why-answer {
@@ -332,5 +342,11 @@
     }
     .about-baalu-container section img {
         display: none;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .heros h1 {
+        font-size: clamp(2.25rem, -0.755rem + 15.0248vw, 3.236rem);
     }
 }

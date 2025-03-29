@@ -599,6 +599,10 @@ footer .copyright-text {
 }
 
 @media screen and (max-width: 435px) {
+    .page-descriptor-container h1 {
+        font-size: clamp(2.25rem, -0.755rem + 15.0248vw, 3.236rem);
+    }
+
     footer {
         gap: 40px;
     }
