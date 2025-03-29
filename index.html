@@ -8,10 +8,33 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Baalu - </title>
+    <title>Baalu - Reliable Global Logistics for Nigerian Brands</title>
 </head>
 
 <body>
+    <!-- <dialog class="toast">
+        <div class="container">
+            <img src="./img/successful-anim.gif" alt="successful tick showing successful status">
+            <h2>Your Message Has Been Received!</h2>
+        </div>
+    </dialog> -->
+
+    <div class="loader-container none">
+        <div class="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
     <header class="flex">
         <a href="/" class="logo">
             <img src="./img/logo-final-white.png" alt="baalu's logo">
@@ -36,7 +59,7 @@
             <a href="/services">services</a>
             <a href="/about">about</a>
             <a href="/contact">contact</a>
-            <a href="/#get-quote-container" class="btn">Request a Quote</a>
+            <a href="#get-quote-container" class="btn">Request a Quote</a>
         </nav>
     </section>
 
@@ -149,31 +172,31 @@
                 Fill out the form to receive a custom quote tailored to your specific logistic needs. Our team will
                 analyze your requirements and provide a comprehensive solution</p>
         </hgroup>
-        <form class="baalu-form">
+        <form class="baalu-form" name="request-quote-form">
             <div class="row">
                 <div class="field">
                     <label for="name">name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" required>
                 </div>
                 <div class="field">
                     <label for="email">email address</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" required>
                 </div>
             </div>
             <div class="row">
                 <div class="field">
                     <label for="company-name">company name</label>
-                    <input type="text" name="company_name" id="company-name">
+                    <input type="text" name="company_name" id="company-name" required>
                 </div>
                 <div class="field">
                     <label for="">how do you manage orders</label>
                     <div class="radio-btn-group">
                         <label for="internal">
-                            <input type="radio" name="order-management" id="internal"><span>i handle it
+                            <input type="radio" name="order_management" id="internal"><span>i handle it
                                 internally</span>
                         </label>
                         <label for="outsource">
-                            <input type="radio" name="order-management" id="outsource"><span>i outsource it</span>
+                            <input type="radio" name="order_management" id="outsource"><span>i outsource it</span>
                         </label>
                     </div>
                 </div>
@@ -181,11 +204,11 @@
             <div class="row">
                 <div class="field">
                     <label for="skus">number of stock keeping units</label>
-                    <input type="number" name="skus" id="skus" placeholder="0">
+                    <input type="number" name="skus" id="skus" placeholder="0" required>
                 </div>
                 <div class="field">
                     <label for="items-per-order">how many items per order</label>
-                    <input type="number" name="items_per_order" id="items-per-order" placeholder="10">
+                    <input type="number" name="items_per_order" id="items-per-order" placeholder="10" required>
                 </div>
             </div>
             <div class="row">
@@ -197,6 +220,16 @@
             </div>
             <button type="submit" class="btn">Send Request</button>
         </form>
+
+        <div class="px-5">
+            <div class="notif-container" id="success">
+                <p>Thank You! Your submission has been received!</p>
+            </div>
+            <div class="notif-container" id="error">
+                <p>Oops! something went wrong while submitting the form</p>
+            </div>
+        </div>
+
     </section>
     <footer class="flex">
         <a href="/" class="logo left">
@@ -224,6 +257,7 @@
     </footer>
 
     <script src="./js/general.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

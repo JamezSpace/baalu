@@ -20,7 +20,7 @@
             <a href="/services">services</a>
             <a href="/about">about</a>
             <a href="/contact" class="active-page">contact</a>
-            <a href="#get-quote-container" class="btn">Request a Quote</a>
+            <a href="/#get-quote-container" class="btn">Request a Quote</a>
         </nav>
         <button type="button" id="toggle-nav-bar">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.826A.913.913 0 1 0 12 5a.913.913 0 0 0 0 1.826m6.088 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826m-12.176 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826M12 12.913a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826m6.088 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826m-12.176 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826M12 19a.913.913 0 1 0 0-1.826A.913.913 0 0 0 12 19m6.088 0a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826M5.912 19a.913.913 0 1 0 0-1.826a.913.913 0 0 0 0 1.826"/></svg>
@@ -36,21 +36,36 @@
         </nav>
     </section>
 
+    <div class="loader-container none">
+        <div class="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <main class="picture-bg flex">
         <hgroup class="font-mt">
             <h1>Get in Touch</h1>
             <p>Hey there, fill this form</p>
         </hgroup>
 
-        <form class="baalu-form">
+        <form class="baalu-form" name="contact-form">
             <div class="row">
                 <div class="field">
                     <label for="name">name</label>
-                    <input type="text" id="name" placeholder="Enter your name">
+                    <input type="text" id="name" placeholder="Enter your name" required>
                 </div>
                 <div class="field">
                     <label for="email">email address</label>
-                    <input type="email" id="email" placeholder="Enter your email">
+                    <input type="email" id="email" placeholder="Enter your email" required>
                 </div>
             </div>
             <div class="row">
@@ -61,6 +76,14 @@
             </div>
             <button type="submit" class="btn">SUBMIT</button>
         </form>
+        <div class="px-5">
+            <div class="notif-container" id="success">
+                <p>Thank You! Your submission has been received!</p>
+            </div>
+            <div class="notif-container" id="error">
+                <p>Oops! something went wrong while submitting the form</p>
+            </div>
+        </div>
     </main>
 
     <section class="reach-out-container my-5">
@@ -118,6 +141,7 @@
     </footer>
 
     <script src="./js/general.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>
