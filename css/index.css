@@ -349,4 +349,9 @@
     .heros h1 {
         font-size: clamp(2.25rem, -0.755rem + 15.0248vw, 3.236rem);
     }
+
+    .why-baalu-container {
+        width: 85%;
+        padding: 20px;
+    }
 }

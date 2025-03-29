@@ -25,3 +25,4 @@ request_form.addEventListener("submit", async e => {
     await sendDataToBackend(data, request_form)
 })
 
+fetch("https://baalu-backend.onrender.com")
