@@ -17,7 +17,8 @@ function toggleNavBar() {
 async function sendDataToBackend(data_to_backend, form) {
     showLoader()
     try {
-        const response = await fetch('http://localhost:4389/quote', {
+        // remember to switch fetch url between localhost and render alternatively for development and production respectively
+        const response = await fetch('https://baalu-backend.onrender.com/quote', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
